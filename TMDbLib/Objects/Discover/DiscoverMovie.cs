@@ -437,5 +437,42 @@ namespace TMDbLib.Objects.Discover
             Parameters["with_original_language"] = language;
             return this;
         }
+
+        /// <summary>
+        /// Specifies a comma or pipe separated list of watch provider ID's.
+        /// </summary>
+        public DiscoverMovie WithWatchProviders(string provider)
+        {
+            Parameters["with_watch_providers"] = provider;
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies an ISO 3166-1 code.
+        /// </summary>
+        public DiscoverMovie WithWatchRegion(string region)
+        {
+            Parameters["watch_region"] = region;
+            return this;
+        }
+
+        /// <summary>
+        /// In combination with watch_region, you can filter by monetization type.
+        /// Specifies one among: flatrate, free, as, rent, buy TODO move this to an enum
+        /// </summary>
+        public DiscoverMovie WithWatchMonetizationTypes(string monetizationTypes)
+        {
+            Parameters["with_watch_monetization_types"] = monetizationTypes;
+            return this;
+        }
+
+        /// <summary>
+        /// Specifies the production companies you want to exclude
+        /// </summary>
+        public DiscoverMovie WithoutCompanies(string companies)
+        {
+            Parameters["without_companies"] = companies;
+            return this;
+        }
     }
 }
